@@ -32,7 +32,7 @@
 <td>{{ employe.adresse}}</td>
 <td>{{ employe.poste}}</td>
 <td>{{ employe.salaire}}</td>
-<td {{ employe.datedenaissance|date("d-m-Y")}}</td>
+<td> {{ employe.datedenaissance|date("m-d-Y")}}</td>
 <td><a href="{{ path('modifier_employe',{ id:employe.id }) }}" class="btn btn-primary"> Modifier</a></td>
 <td><a onclick="return confirm('voulez vous supprimer')" href="{{ path('supprimer_employe',{ id:employe.id }) }}" class="btn btn-primary">Supprimer  </a></td>
 </tr>

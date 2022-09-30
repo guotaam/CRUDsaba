@@ -2,9 +2,12 @@
 
 namespace App\Entity;
 
-use App\Repository\EmployeRepository;
+use Assert\NotBlank;
+use Constraints as Assert;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use App\Repository\EmployeRepository;
+
 
 #[ORM\Entity(repositoryClass: EmployeRepository::class)]
 class Employe
@@ -12,11 +15,12 @@ class Employe
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
-    private ?int $id = null;
 
+    private ?int $id = null;
+   
     #[ORM\Column(length: 255)]
     private ?string $prenom = null;
-
+   
     #[ORM\Column(length: 255)]
     private ?string $nom = null;
 
