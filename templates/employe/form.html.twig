@@ -1,0 +1,30 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+
+
+
+
+{{ form_start(formEmploye)}} 
+
+
+     {{ form_row(formEmploye.prenom) }}
+     {{ form_row(formEmploye.nom) }}
+     {{ form_row(formEmploye.telephone) }}
+   {{ form_row(formEmploye.email) }}
+    {{ form_row(formEmploye.adresse) }}
+     {{ form_row(formEmploye.poste) }}
+      {{ form_row(formEmploye.salaire) }}
+       {{ form_row(formEmploye.datedenaissance) }}
+
+ 
+ <button type="submit" class="btn btn-primary mt-2">
+    {% if editMode %}
+      Enregistrer les Modification
+    {% else %}
+     Ajouter un employé
+     {% endif %}
+ 
+ </button>
+{{ form_end(formEmploye)}} 
+{% endblock %}
