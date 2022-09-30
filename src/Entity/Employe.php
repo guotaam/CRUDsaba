@@ -1,9 +1,9 @@
 <?php
 
 namespace App\Entity;
-
+use Symfony\Component\Validator\Constraints as Assert;
 use Assert\NotBlank;
-use Constraints as Assert;
+
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 use App\Repository\EmployeRepository;
@@ -17,11 +17,14 @@ class Employe
     #[ORM\Column]
 
     private ?int $id = null;
-   
+    #[Assert\NotBlank(message:"ce champs est obligatoire")]
+    #[Assert\Length(min:4,max:255,minMessage:"Pas assez de caractere il faut {{ limit }} caracteres")]
     #[ORM\Column(length: 255)]
     private ?string $prenom = null;
    
     #[ORM\Column(length: 255)]
+    #[Assert\NotBlank(message:"ce champs est obligatoire")]
+    #[Assert\Length(min:5,max:255,minMessage:"Pas assez de caractere il faut {{ limit }} caracteres")]
     private ?string $nom = null;
 
     #[ORM\Column(length: 255)]

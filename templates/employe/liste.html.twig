@@ -5,7 +5,7 @@
 {% block body %}
 
 
-<table class="table">
+<table class="table table-dark table-striped mt-0 mb-0">
 <thead>
 <tr>
  <th>Prenom</th>
@@ -33,8 +33,8 @@
 <td>{{ employe.poste}}</td>
 <td>{{ employe.salaire}}</td>
 <td> {{ employe.datedenaissance|date("m-d-Y")}}</td>
-<td><a href="{{ path('modifier_employe',{ id:employe.id }) }}" class="btn btn-primary"> Modifier</a></td>
-<td><a onclick="return confirm('voulez vous supprimer')" href="{{ path('supprimer_employe',{ id:employe.id }) }}" class="btn btn-primary">Supprimer  </a></td>
+<td><a href="{{ path('modifier_employe',{ id:employe.id }) }}" class="btn btn-primary"> <img src="/img/edit.png" width="50px" alt=""> Modifier</a></td>
+<td><a onclick="return confirm('voulez vous supprimer')" href="{{ path('supprimer_employe',{ id:employe.id }) }}" class="btn btn-primary"><img src="/img/delete.png" width="50px" alt=""> Supprimer  </a></td>
 </tr>
 
 </tr>
