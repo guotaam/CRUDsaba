@@ -21,6 +21,8 @@ class EmployeFixtures extends Fixture
         ->setPoste("poste employé $i")
         ->setSalaire("salaire employé $i")
         ->setDatedenaissance(new \DateTime());
+        
+
 
         $manager->persist($employe);
     }

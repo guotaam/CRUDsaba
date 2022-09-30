@@ -6,6 +6,7 @@ use App\Entity\Employe;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
 
 class EmployeType extends AbstractType
 {
@@ -19,8 +20,13 @@ class EmployeType extends AbstractType
             ->add('adresse')
             ->add('poste')
             ->add('salaire')
-            ->add('datedenaissance')
-        ;
+            
+            ->add('datedenaissance', DateType::class, [
+                'placeholder' => [
+                    'year' => 'Year', 'month' => 'Month', 'day' => 'Day',
+                ],"years"=>range(1986,2000)
+            ]);
+        
     }
 
     public function configureOptions(OptionsResolver $resolver): void
